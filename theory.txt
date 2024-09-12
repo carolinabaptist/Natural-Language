@@ -126,6 +126,6 @@ After collecting data, it's analyzed to check the results and determine whether 
 
 For any machine learning model to perform well, a large amount of data is required. This data serves as the foundation for both training and testing models. During training, the model learns patterns from the data, and during testing, the model is evaluated on how well it can generalize to new, unseen data.
 
-Annotated data refers to data that has been labeled with relevant information that the model can use to learn. For example, in NLP tasks like sentiment analysis, text data might be labeled with tags like "positive," "negative," or "neutral." In a named entity recognition task, entities like people's names, locations, or dates would be annotated within the text.
+Annotated data: data that has been labeled with relevant information that the model can use to learn. For example, in NLP tasks like sentiment analysis, text data might be labeled with tags like "positive," "negative," or "neutral." In a named entity recognition task, entities like people's names, locations, or dates would be annotated within the text.
 
 Finally, researchers draw conclusions based on the analysis. They decide if the hypothesis was correct or if further experimentation is needed.
