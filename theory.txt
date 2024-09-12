@@ -1,0 +1,83 @@
+Grammatical System
+
+Language has a grammatical system that defines its rules and structures. Grammar includes rules for 
+syntax (how to organize words into sentences) and morphology (how words are formed and modified). 
+These rules are fundamental for efficient and coherent communication, both in natural languages 
+​​(such as English or Portuguese) and in formal languages.
+
+Each language has its own rules that govern how sounds, words, and sentences are organized and 
+understood. Even though some rules may be similar across different languages, many are unique 
+and reflect the culture and history of a people.
+
+Communication is the primary function of language. It allows people to express thoughts, emotions 
+and intentions in a structured way. This is essential not only in speech and writing, but also in
+the digital context, where NLP tries to decipher and generate human language to improve human-machine
+interaction.
+
+Human language is natural, that is, it develops spontaneously in individuals through social 
+interaction. Unlike artificial languages ​​(such as programming languages), natural languages ​​evolve 
+organically.
+
+Languages ​​evolve naturally as people communicate and adapt language to new realities. New terms are 
+created, expressions change meaning and language adapts to new social and technological contexts.
+
+New words are created every day. This can happen due to technological innovation, cultural changes,
+or influences from other languages. In PLN, dealing with these new words (called out-of-vocabulary 
+words or words outside the vocabulary) is a constant challenge.
+
+New words are constantly being added to languages due to cultural, technological, and social 
+changes.
+
+Examples:
+Selfie: This word gained popularity around 2012 and was officially added to dictionaries shortly after.
+Binge-watch: This became common with the rise of platforms like Netflix.
+Thou: An archaic form of "you" in singular form, used frequently in Middle English and Early 
+Modern English. It's no longer in everyday use except in specific contexts (e.g., poetry, 
+religious texts).
+
+Natural languages are those that have evolved organically among humans for communication.
+
+Portuguese: A Romance language that evolved from Latin.
+English: A Germanic language with significant influences from Latin and French.
+Portuguese Sign Language: A visual-gestural natural language used by the deaf community 
+in Portugal. It's an example of a sign language, which, like spoken languages, evolves 
+naturally within communities.
+Esperanto is not a natural language, but rather a constructed language (conlang). It was 
+created in the late 19th century by L. L. Zamenhof with the aim of promoting international 
+communication. Although it has a relatively small community of speakers, Esperanto did not 
+evolve naturally from human interaction but was designed intentionally with simplified grammar 
+and vocabulary from various European languages.
+
+NLP: Field of Artificial Intelligence and Linguistics concerned with the interactions between 
+computers and human natural languages.
+
+Challenges
+
+Language variability:  common challenge in developing dialogue systems in Natural Language 
+Processing (NLP). Multiple phrases are used to express the same request. Ex: "Switch on the light!",
+"Switch the light on!", "Turn the light on!" etc. Even though all these sentences have the same intent (turning on the light), the phrasing 
+differs significantly. A well-designed dialogue system (like a chatbot or virtual assistant) 
+must be able to understand the different ways people express the same idea (despite varied 
+sentence structure or vocabulary) and Respond appropriately by recognizing the intent behind 
+these different expressions, which may involve handling variations in syntax, politeness, or 
+regional usage.
+
+Paraphrases: Two sentences that convey the same meaning, despite having different wording
+
+Ambiguity: The response does not fully answer the intended request. 
+"Can you turn on the light, please?" "Yes, I can!" The responder acknowledges that they can turn 
+on the light but does not clarify whether they will actually do so.
+
+Ambiguity and Vagueness: "Can you turn on the light, please?" The problem: There are multiple 
+lights. This introduces vagueness because it’s unclear which light the user is referring to. 
+The request lacks specific information, making it ambiguous for the listener or system to 
+determine the correct action.
+
+A single sentence can have different meanings, and the source of ambiguity can vary. Ambiguity 
+in language occurs when a sentence or phrase can be interpreted in multiple ways. There are 
+several types of ambiguity that can arise in natural language, making it a challenging task 
+for NLP systems to resolve meaning accurately.
+
+Lexical Ambiguity: Occurs when a word has more than one meaning.
+Example: "She can't bear children." This could mean "She cannot tolerate children" or "She 
+is unable to give birth to children."
