@@ -81,3 +81,51 @@ for NLP systems to resolve meaning accurately.
 Lexical Ambiguity: Occurs when a word has more than one meaning.
 Example: "She can't bear children." This could mean "She cannot tolerate children" or "She 
 is unable to give birth to children."
+
+Syntactic Ambiguity: Occurs when a sentence can be parsed (structured) in more than one way, leading to different meanings.
+Example: I saw the man on the hill with a telescope.
+
+All ambiguities “are” semantic, but some are not related with lexical and syntactic ambiguity.
+Examples: John and Mary are married. John kissed his wife and Peter too.
+
+Ellipsis: omission of words in a sentence that are implied by the context.
+"Can you turn on the light, please?" "Now, the radio!" "Now turn it off!" The phrase "Now the radio!" omits words that are understood from the previous context. 
+
+Co-reference resolution: task of determining which words refer to the same entity in a text.
+The phrase "Now turn it off!" refers to something previously mentioned, but the word "it" is ambiguous on its own. Based on the context, "it" could refer to either the light or the radio, but we understand that the speaker is likely referring to the radio (since that was mentioned last).
+
+Noise: In voice-based systems, noise refers to external sounds like traffic, people talking, or poor audio quality that makes it difficult to accurately capture spoken language.Noise in speech (background sounds) or text (typos, slang) can cause NLP models to misunderstand the intended meaning or fail to correctly process the input.
+
+Different accents: changes how sounds are produced. For example, in some British accents, the "r" sound may not be pronounced at the end of words ("car" might sound like "cah"), while in American English, the "r" is more pronounced. These differences can confuse speech recognition systems if they are not trained to handle multiple accents.
+
+Age variation: Younger children often have different pronunciation patterns (e.g., mispronunciations), a more limited vocabulary, and varying grammatical structures as they are still learning the language. They also tend to speak at a higher pitch, with shorter and simpler sentences. Older adults may speak more slowly, use different vocabulary (sometimes outdated terms), and have different speech patterns due to factors like cognitive aging or health conditions (e.g., hearing loss or voice tremors).
+
+Context: the same sentence can convey completely different emotions and intentions depending on the context. Context is critical because words and sentences don’t exist in isolation. Their meaning often depends on who is speaking, what was said previously and external factors like time, place, tone.
+
+Sarcasm and irony: meaning that is often the opposite of the literal interpretation of words. Both rely heavily on context, tone, and prior knowledge to be understood correctly, which are things that machines typically struggle with.
+
+Transformers are a revolutionary neural network architecture in the field of Natural Language Processing (NLP) and other areas of deep learning. Transformers have radically changed the way language models are designed and trained, surpassing previous architectures like recurrent neural networks (RNNs) and LSTMs (Long Short-Term Memory).
+
+Attention Mechanism: In the context of a sentence, this means that when processing a word, Transformer can look at all the other words in the sequence and decide which ones to "pay more attention to" in order to understand the meaning of the sentence.
+
+Self-Attention: In a sentence like "The cat sat on the mat", the self-attention mechanism helps the model understand that "the" refers to "cat" and "mat" is a location, without needing to process the words in an order strict.
+
+Parallelization: Transformers can process all words in the sequence at the same time. This makes them much faster and more efficient in training and inference.
+
+The scientific method with a focus on data collection as a key step
+
+First, scientists identify a problem or make an observation that leads to a research question. This question is the basis for further investigation.
+
+A hypothesis is formulated, which is a testable and falsifiable prediction that provides a tentative explanation to the research question.
+
+Data Collection involves planning and gathering data in a structured manner. It is critical to collect sufficient and relevant data to test the hypothesis. The Data Collection step you've highlighted is critical because the quality and reliability of the data directly impact the outcomes of the research. This step often involves planning the methodology, determining how to minimize bias, and ensuring that the sample size is adequate.
+
+Researchers design and conduct experiments that will allow them to test their hypothesis under controlled conditions.
+
+After collecting data, it's analyzed to check the results and determine whether they support the hypothesis or not.
+
+For any machine learning model to perform well, a large amount of data is required. This data serves as the foundation for both training and testing models. During training, the model learns patterns from the data, and during testing, the model is evaluated on how well it can generalize to new, unseen data.
+
+Annotated data refers to data that has been labeled with relevant information that the model can use to learn. For example, in NLP tasks like sentiment analysis, text data might be labeled with tags like "positive," "negative," or "neutral." In a named entity recognition task, entities like people's names, locations, or dates would be annotated within the text.
+
+Finally, researchers draw conclusions based on the analysis. They decide if the hypothesis was correct or if further experimentation is needed.
