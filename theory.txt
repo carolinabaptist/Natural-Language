@@ -1,7 +1,9 @@
 Grammatical System
 
-Language has a grammatical system that defines its rules and structures. Grammar includes rules for syntax (how to organize words into sentences) and morphology (how words are formed and modified). 
-These rules are fundamental for efficient and coherent communication, both in natural languages ​​(such as English or Portuguese) and in formal languages.
+Language has a grammatical system that defines its rules and structures. Grammar includes rules 
+for syntax (how to organize words into sentences) and morphology (how words are formed and modified). 
+These rules are fundamental for efficient and coherent communication, both in natural languages ​​
+(such as English or Portuguese) and in formal languages.
 
 Each language has its own rules that govern how sounds, words, and sentences are organized and 
 understood. Even though some rules may be similar across different languages, many are unique 
@@ -53,7 +55,8 @@ Challenges
 
 Language variability:  common challenge in developing dialogue systems in Natural Language 
 Processing (NLP). Multiple phrases are used to express the same request. Ex: "Switch on the light!",
-"Switch the light on!", "Turn the light on!" etc. Even though all these sentences have the same intent (turning on the light), the phrasing 
+"Switch the light on!", "Turn the light on!" etc. Even though all these sentences have the same 
+intent (turning on the light), the phrasing 
 differs significantly. A well-designed dialogue system (like a chatbot or virtual assistant) 
 must be able to understand the different ways people express the same idea (despite varied 
 sentence structure or vocabulary) and Respond appropriately by recognizing the intent behind 
@@ -80,120 +83,264 @@ Lexical Ambiguity: Occurs when a word has more than one meaning.
 Example: "She can't bear children." This could mean "She cannot tolerate children" or "She 
 is unable to give birth to children."
 
-Syntactic Ambiguity: Occurs when a sentence can be parsed (structured) in more than one way, leading to different meanings.
+Syntactic Ambiguity: Occurs when a sentence can be parsed (structured) in more than one way, 
+leading to different meanings.
 Example: I saw the man on the hill with a telescope.
 
 All ambiguities “are” semantic, but some are not related with lexical and syntactic ambiguity.
 Examples: John and Mary are married. John kissed his wife and Peter too.
 
 Ellipsis: omission of words in a sentence that are implied by the context.
-"Can you turn on the light, please?" "Now, the radio!" "Now turn it off!" The phrase "Now the radio!" omits words that are understood from the previous context. 
+"Can you turn on the light, please?" "Now, the radio!" "Now turn it off!" The phrase "Now the radio!" 
+omits words that are understood from the previous context. 
 
 Co-reference resolution: task of determining which words refer to the same entity in a text.
-The phrase "Now turn it off!" refers to something previously mentioned, but the word "it" is ambiguous on its own. Based on the context, "it" could refer to either the light or the radio, but we understand that the speaker is likely referring to the radio (since that was mentioned last).
+The phrase "Now turn it off!" refers to something previously mentioned, but the word "it" is 
+ambiguous on its own. Based on the context, "it" could refer to either the light or the radio, 
+but we understand that the speaker is likely referring to the radio (since that was mentioned last).
 
-Noise: In voice-based systems, noise refers to external sounds like traffic, people talking, or poor audio quality that makes it difficult to accurately capture spoken language.Noise in speech (background sounds) or text (typos, slang) can cause NLP models to misunderstand the intended meaning or fail to correctly process the input.
+Noise: In voice-based systems, noise refers to external sounds like traffic, people talking, 
+or poor audio quality that makes it difficult to accurately capture spoken language.
+Noise in speech (background sounds) or text (typos, slang) can cause NLP models to 
+misunderstand the intended meaning or fail to correctly process the input.
 
-Different accents: changes how sounds are produced. For example, in some British accents, the "r" sound may not be pronounced at the end of words ("car" might sound like "cah"), while in American English, the "r" is more pronounced. These differences can confuse speech recognition systems if they are not trained to handle multiple accents.
+Different accents: changes how sounds are produced. For example, in some British accents, 
+the "r" sound may not be pronounced at the end of words ("car" might sound like "cah"), 
+while in American English, the "r" is more pronounced. These differences can confuse speech 
+recognition systems if they are not trained to handle multiple accents.
 
-Age variation: Younger children often have different pronunciation patterns (e.g., mispronunciations), a more limited vocabulary, and varying grammatical structures as they are still learning the language. They also tend to speak at a higher pitch, with shorter and simpler sentences. Older adults may speak more slowly, use different vocabulary (sometimes outdated terms), and have different speech patterns due to factors like cognitive aging or health conditions (e.g., hearing loss or voice tremors).
+Age variation: Younger children often have different pronunciation patterns (e.g., mispronunciations),
+a more limited vocabulary, and varying grammatical structures as they are still learning the language.
+They also tend to speak at a higher pitch, with shorter and simpler sentences. Older adults may speak 
+more slowly, use different vocabulary (sometimes outdated terms), and have different speech patterns 
+due to factors like cognitive aging or health conditions (e.g., hearing loss or voice tremors).
 
-Context: the same sentence can convey completely different emotions and intentions depending on the context. Context is critical because words and sentences don’t exist in isolation. Their meaning often depends on who is speaking, what was said previously and external factors like time, place, tone.
+Context: the same sentence can convey completely different emotions and intentions depending on 
+the context. Context is critical because words and sentences don’t exist in isolation. 
+Their meaning often depends on who is speaking, what was said previously and external factors 
+like time, place, tone.
 
-Sarcasm and irony: meaning that is often the opposite of the literal interpretation of words. Both rely heavily on context, tone, and prior knowledge to be understood correctly, which are things that machines typically struggle with.
+Sarcasm and irony: meaning that is often the opposite of the literal interpretation of words. 
+Both rely heavily on context, tone, and prior knowledge to be understood correctly, which are 
+things that machines typically struggle with.
 
-Transformers are a revolutionary neural network architecture in the field of Natural Language Processing (NLP) and other areas of deep learning. Transformers have radically changed the way language models are designed and trained, surpassing previous architectures like recurrent neural networks (RNNs) and LSTMs (Long Short-Term Memory).
+Transformers are a revolutionary neural network architecture in the field of Natural Language 
+Processing (NLP) and other areas of deep learning. Transformers have radically changed the way 
+language models are designed and trained, surpassing previous architectures like recurrent neural 
+networks (RNNs) and LSTMs (Long Short-Term Memory).
 
-Attention Mechanism: In the context of a sentence, this means that when processing a word, Transformer can look at all the other words in the sequence and decide which ones to "pay more attention to" in order to understand the meaning of the sentence.
+Attention Mechanism: In the context of a sentence, this means that when processing a word, 
+Transformer can look at all the other words in the sequence and decide which ones to 
+"pay more attention to" in order to understand the meaning of the sentence.
 
-Self-Attention: In a sentence like "The cat sat on the mat", the self-attention mechanism helps the model understand that "the" refers to "cat" and "mat" is a location, without needing to process the words in an order strict.
+Self-Attention: In a sentence like "The cat sat on the mat", the self-attention mechanism 
+helps the model understand that "the" refers to "cat" and "mat" is a location, without 
+needing to process the words in an order strict.
 
-Parallelization: Transformers can process all words in the sequence at the same time. This makes them much faster and more efficient in training and inference.
+Parallelization: Transformers can process all words in the sequence at the same time. 
+This makes them much faster and more efficient in training and inference.
 
 The scientific method with a focus on data collection as a key step
 
-First, scientists identify a problem or make an observation that leads to a research question. This question is the basis for further investigation.
+First, scientists identify a problem or make an observation that leads to a research question. 
+This question is the basis for further investigation.
 
-A hypothesis is formulated, which is a testable and falsifiable prediction that provides a tentative explanation to the research question.
+A hypothesis is formulated, which is a testable and falsifiable prediction that provides 
+a tentative explanation to the research question.
 
-Data Collection involves planning and gathering data in a structured manner. It is critical to collect sufficient and relevant data to test the hypothesis. The Data Collection step you've highlighted is critical because the quality and reliability of the data directly impact the outcomes of the research. This step often involves planning the methodology, determining how to minimize bias, and ensuring that the sample size is adequate.
+Data Collection involves planning and gathering data in a structured manner. It is critical 
+to collect sufficient and relevant data to test the hypothesis. The Data Collection step 
+you've highlighted is critical because the quality and reliability of the data directly 
+impact the outcomes of the research. This step often involves planning the methodology, 
+determining how to minimize bias, and ensuring that the sample size is adequate.
 
-Researchers design and conduct experiments that will allow them to test their hypothesis under controlled conditions.
+Researchers design and conduct experiments that will allow them to test their hypothesis 
+under controlled conditions.
 
-After collecting data, it's analyzed to check the results and determine whether they support the hypothesis or not.
+After collecting data, it's analyzed to check the results and determine whether they 
+support the hypothesis or not.
 
-For any machine learning model to perform well, a large amount of data is required. This data serves as the foundation for both training and testing models. During training, the model learns patterns from the data, and during testing, the model is evaluated on how well it can generalize to new, unseen data.
+For any machine learning model to perform well, a large amount of data is required. 
+This data serves as the foundation for both training and testing models. During 
+training, the model learns patterns from the data, and during testing, the model 
+is evaluated on how well it can generalize to new, unseen data.
 
-Annotated data: data that has been labeled with relevant information that the model can use to learn. For example, in NLP tasks like sentiment analysis, text data might be labeled with tags like "positive," "negative," or "neutral." In a named entity recognition task, entities like people's names, locations, or dates would be annotated within the text.
+Annotated data: data that has been labeled with relevant information that the model 
+can use to learn. For example, in NLP tasks like sentiment analysis, text data might 
+be labeled with tags like "positive," "negative," or "neutral." In a named entity 
+recognition task, entities like people's names, locations, or dates would be annotated 
+within the text.
 
-Finally, researchers draw conclusions based on the analysis. They decide if the hypothesis was correct or if further experimentation is needed.
+Finally, researchers draw conclusions based on the analysis. They decide if the 
+hypothesis was correct or if further experimentation is needed.
 
 To train and test our models, we need data and sometimes annotated data.
 
-Corpus: is a collection of texts used for Sentiment Analysis or PoS Tagging. Corpora is the plural. Corpora come in many forms and can either have annotations or be unannotated. Annotations are extra layers of information added to the text, such as part-of-speech tags, syntactic structure, semantic roles, or even sentiment indicators. These annotations make it easier for machines and researchers to analyze specific linguistic features in the text.
+Corpus: is a collection of texts used for Sentiment Analysis or PoS Tagging. Corpora 
+is the plural. Corpora come in many forms and can either have annotations or be 
+unannotated. Annotations are extra layers of information added to the text, such
+as part-of-speech tags, syntactic structure, semantic roles, or even sentiment 
+indicators. These annotations make it easier for machines and researchers to 
+analyze specific linguistic features in the text.
 
-Sentiment Analysis: Reviews or comments in a corpus might be annotated to indicate their overall sentiment. For instance, each review could be labeled as positive, neutral, or negative, allowing researchers or machine learning models to identify the emotional tone of the text.
+Sentiment Analysis: Reviews or comments in a corpus might be annotated to 
+indicate their overall sentiment. For instance, each review could be labeled 
+as positive, neutral, or negative, allowing researchers or machine learning 
+models to identify the emotional tone of the text.
 
-Morpho-syntactic Tagging: In another example, individual words within a text can be annotated with their morpho-syntactic category. This means that each word is labeled according to its grammatical function, such as verb, noun, adjective, etc. This kind of annotation helps in tasks like part-of-speech tagging or syntactic parsing, which are key to understanding the structure of sentences.
+Morpho-syntactic Tagging: In another example, individual words within a text 
+can be annotated with their morpho-syntactic category. This means that each 
+word is labeled according to its grammatical function, such as verb, noun, 
+adjective, etc. This kind of annotation helps in tasks like part-of-speech 
+tagging or syntactic parsing, which are key to understanding the structure 
+of sentences.
 
-Building Corpora involves creating and curating large collections of texts, and it can be a time-consuming and expensive process.
+Building Corpora involves creating and curating large collections of texts, 
+and it can be a time-consuming and expensive process.
 
-Often, experts in linguistics, data science, or specific domains are required to annotate or label the data accurately. For instance, tagging a corpus with complex annotations like syntactic structures or specific domain knowledge (legal, medical texts) requires specialized expertise, which adds to the cost and time.
+Often, experts in linguistics, data science, or specific domains are required
+to annotate or label the data accurately. For instance, tagging a corpus with 
+complex annotations like syntactic structures or specific domain knowledge 
+(legal, medical texts) requires specialized expertise, which adds to the cost and time.
 
-To reduce costs and speed up the process, some projects rely on crowdsourcing. This involves using platforms where a large number of non-experts, or the "crowd," can contribute to the labeling of data. A well-known platform for this is Amazon Mechanical Turk, where workers are paid to complete small tasks, such as labeling the sentiment of a review or categorizing text snippets.
+To reduce costs and speed up the process, some projects rely on crowdsourcing. 
+This involves using platforms where a large number of non-experts, or the "crowd," 
+can contribute to the labeling of data. A well-known platform for this is 
+Amazon Mechanical Turk, where workers are paid to complete small tasks, such as 
+labeling the sentiment of a review or categorizing text snippets.
 
-Here are some examples of NLP tasks that require annotated data where the annotators do not need to be experts:
+Here are some examples of NLP tasks that require annotated data where the annotators 
+do not need to be experts:
 
-1. Sentiment Analysis: Annotators label text (such as reviews, tweets, or comments) as positive, neutral, or negative based on the overall sentiment. Basic human understanding of emotions and attitudes is sufficient to decide whether a text conveys a positive, negative, or neutral sentiment.
-2. Named Entity Recognition (NER): Annotators mark specific entities in text, like names of people, locations, or dates. Identifying names or locations does not require specialized knowledge, just an understanding of the language.
-3. Text Classification: Assigning a category to a piece of text, such as whether an article is about sports, politics, or technology.
+1. Sentiment Analysis: Annotators label text (such as reviews, tweets, or comments) 
+as positive, neutral, or negative based on the overall sentiment. Basic human 
+understanding of emotions and attitudes is sufficient to decide whether a text 
+conveys a positive, negative, or neutral sentiment.
+2. Named Entity Recognition (NER): Annotators mark specific entities in text, like 
+names of people, locations, or dates. Identifying names or locations does not 
+require specialized knowledge, just an understanding of the language.
+3. Text Classification: Assigning a category to a piece of text, such as whether 
+an article is about sports, politics, or technology.
 
-One notable example of corpus-building involves text alignment, an NLP task. Text alignment is the process of aligning corresponding segments of text (such as sentences or paragraphs) between two or more languages or different versions of the same language. This can be crucial for tasks like machine translation and comparative linguistic studies.
+One notable example of corpus-building involves text alignment, an NLP task. 
+Text alignment is the process of aligning corresponding segments of text 
+(such as sentences or paragraphs) between two or more languages or different 
+versions of the same language. This can be crucial for tasks like machine 
+translation and comparative linguistic studies.
 
-CLUE-Aligner is a project led by Anabela Barreiro that focuses on text alignment. The tool developed in this project automates the process of aligning texts across languages, typically aligning parallel texts in bilingual corpora.
+CLUE-Aligner is a project led by Anabela Barreiro that focuses on text alignment. 
+The tool developed in this project automates the process of aligning texts across 
+languages, typically aligning parallel texts in bilingual corpora.
 
-Another key example of corpus building relates to text segmentation, a NLP task that involves dividing texts into meaningful segments, such as sentences, paragraphs, or topics. This task is essential for many natural language processing applications like summarization, information retrieval, and text analysis.
+Another key example of corpus building relates to text segmentation, a NLP task 
+that involves dividing texts into meaningful segments, such as sentences, paragraphs, 
+or topics. This task is essential for many natural language processing applications 
+like summarization, information retrieval, and text analysis.
 
-In some cases, you might not have an existing corpus or dataset to work with when developing a natural language processing (NLP) system. In these situations, a common solution is to use a Wizard of Oz approach.
+In some cases, you might not have an existing corpus or dataset to work with when 
+developing a natural language processing (NLP) system. In these situations, a 
+common solution is to use a Wizard of Oz approach.
 
-Wizard of Oz refers to a method where a human (the "wizard") simulates the behavior of the system being developed. This is done without the end-user knowing that there isn’t a fully functional automated system in place. The goal is to collect data on how users interact with the system and how it is expected to function in real-world scenarios.  If you don’t have an existing corpus to understand how your NLP system will be used, the Wizard of Oz approach allows you to simulate the system's functionality. A human mimics the system’s responses to gather insights into user interactions. And collect data: As users interact with the system, you generate real-world data, which can later be used to build or expand a corpus.
+Wizard of Oz refers to a method where a human (the "wizard") simulates the behavior 
+of the system being developed. This is done without the end-user knowing that there 
+isn’t a fully functional automated system in place. The goal is to collect data on 
+how users interact with the system and how it is expected to function in real-world 
+scenarios.  If you don’t have an existing corpus to understand how your NLP system 
+will be used, the Wizard of Oz approach allows you to simulate the system's 
+functionality. A human mimics the system’s responses to gather insights into 
+user interactions. And collect data: As users interact with the system, you generate 
+real-world data, which can later be used to build or expand a corpus.
 
-When building annotated corpora, it's crucial to evaluate the quality of the annotations. One key method to assess this is by measuring the inter-annotator agreement (IAA). This metric shows how consistently different annotators label the same data. Inter-annotator agreement is a way to check the quality of the annotations by assessing how much annotators agree on their labeling or tagging. High agreement typically suggests that the task is clear, the guidelines are well-defined, and the annotators are doing a good job.
+When building annotated corpora, it's crucial to evaluate the quality of the annotations.
+One key method to assess this is by measuring the inter-annotator agreement (IAA). 
+This metric shows how consistently different annotators label the same data. 
+Inter-annotator agreement is a way to check the quality of the annotations by 
+assessing how much annotators agree on their labeling or tagging. 
+High agreement typically suggests that the task is clear, the guidelines are 
+well-defined, and the annotators are doing a good job.
 
-If the agreement among annotators is low, it indicates a potential problem such as bad Guidelines. The instructions for how to annotate the data may be unclear or incomplete.
-Inconsistent or vague guidelines make it difficult for annotators to apply the same criteria across the dataset. Or The task is very difficult: Some NLP tasks, like labeling complex emotions or identifying abstract entities, may inherently be subjective or ambiguous. Even with clear guidelines, some tasks may be naturally prone to lower agreement due to the complexity of the language or concepts involved.
+If the agreement among annotators is low, it indicates a potential problem such as 
+bad Guidelines. The instructions for how to annotate the data may be unclear or incomplete.
 
-Depending on the nature of the task and the number of annotators involved, various statistical methods can be used to quantify agreement. 
+Inconsistent or vague guidelines make it difficult for annotators to apply the same 
+criteria across the dataset. Or The task is very difficult: Some NLP tasks, like 
+labeling complex emotions or identifying abstract entities, may inherently be 
+subjective or ambiguous. Even with clear guidelines, some tasks may be naturally 
+prone to lower agreement due to the complexity of the language or concepts involved.
 
-Cohen's Kappa Coefficient: Used when there are two annotators working on the same dataset. It calculates how much the annotators agree beyond what would be expected by chance.
+Depending on the nature of the task and the number of annotators involved, various 
+statistical methods can be used to quantify agreement. 
 
-Fleiss’ Kappa: When there are more than two annotators, such as in large-scale annotation projects or crowdsourced tasks. Fleiss' kappa is an extension of Cohen’s kappa that measures agreement between three or more annotators. It is used when a group of annotators labels data into categories.
+Cohen's Kappa Coefficient: Used when there are two annotators working on the same 
+dataset. It calculates how much the annotators agree beyond what would be expected by chance.
 
-Window Difference: When the task involves segmenting text into meaningful parts (e.g., identifying sentence or topic breaks). Window Difference (WD) is a metric specifically designed to measure agreement in text segmentation tasks. It assesses how well the annotators agree on segment boundaries (e.g., where paragraphs or topics should be split in a document). 
+Fleiss’ Kappa: When there are more than two annotators, such as in large-scale annotation projects 
+or crowdsourced tasks. Fleiss' kappa is an extension of Cohen’s kappa that measures agreement between
+three or more annotators. It is used when a group of annotators labels data into categories.
 
-Each NLP task may require a specialized metric to accurately measure agreement. While kappa metrics are ideal for categorical labeling tasks, other metrics like Window Difference are designed for tasks like segmentation.
+Window Difference: When the task involves segmenting text into meaningful parts (e.g., identifying 
+sentence or topic breaks). Window Difference (WD) is a metric specifically designed to measure 
+agreement in text segmentation tasks. It assesses how well the annotators agree on segment 
+boundaries (e.g., where paragraphs or topics should be split in a document). 
+
+Each NLP task may require a specialized metric to accurately measure agreement. While kappa 
+metrics are ideal for categorical labeling tasks, other metrics like Window Difference are 
+designed for tasks like segmentation.
 
 Data Splits
-In machine learning, particularly for NLP tasks, datasets are typically split into different subsets to ensure that models are trained and evaluated properly. The two most important splits are:
+In machine learning, particularly for NLP tasks, datasets are typically split into different 
+subsets to ensure that models are trained and evaluated properly. 
+The two most important splits are:
 
-Train set: This subset is used to train the model, meaning the model learns patterns, structures, and relationships in the data.
+Train set: This subset is used to train the model, meaning the model learns patterns, structures,
+and relationships in the data.
 
-Test set: This subset is used to evaluate the model after training. It assesses the model’s ability to generalize to new, unseen data and gives an indication of how well the model will perform in real-world scenarios. Importantly, the test set must remain separate from the training data to avoid overfitting, and it is not used during training.
+Test set: This subset is used to evaluate the model after training. It assesses the model’s ability 
+to generalize to new, unseen data and gives an indication of how well the model will perform 
+in real-world scenarios. Importantly, the test set must remain separate from the training data 
+to avoid overfitting, and it is not used during training.
 
-For large language models (LLMs), like GPT or BERT, ensuring that the training data and test data are strictly separate—often called data hygiene—is crucial but challenging, especially with large, diverse datasets. When data is sourced from the web, overlapping data between training and testing datasets can inadvertently occur.
+For large language models (LLMs), like GPT or BERT, ensuring that the training data and test data 
+are strictly separate—often called data hygiene—is crucial but challenging, especially with large,
+diverse datasets. When data is sourced from the web, overlapping data between training and testing 
+datasets can inadvertently occur.
 
 How to Guarantee the Separation of Training and Test Data:
-Data Deduplication: Before splitting the dataset, apply deduplication techniques to identify and remove any duplicate data across the training, validation, and test sets. Tools like MinHash or SimHash can be used to find near-duplicates in text corpora, which helps avoid overlaps between sets.
-Cross-Validation: For some tasks, especially when data is limited, use k-fold cross-validation, where the data is divided into k subsets, and the model is trained and tested k times with different training/test splits. This process ensures that every data point is used both for training and testing, but never at the same time.
+Data Deduplication: Before splitting the dataset, apply deduplication techniques to identify 
+and remove any duplicate data across the training, validation, and test sets. Tools like 
+MinHash or SimHash can be used to find near-duplicates in text corpora, which helps avoid 
+overlaps between sets.
+Cross-Validation: For some tasks, especially when data is limited, use k-fold cross-validation,
+where the data is divided into k subsets, and the model is trained and tested k times with 
+different training/test splits. This process ensures that every data point is used both for 
+training and testing, but never at the same time.
 
 In addition to the train and test sets, there are other important splits:
 
-Validation Set: The validation set is used during the tuning process of a model, primarily to help adjust and fine-tune hyperparameters. This is also known as hyperparameter tuning. Like the test set, the validation set is not used to train the model itself. Instead, it is used to evaluate the model's performance on unseen data during the training process, allowing adjustments to be made to improve performance. It’s important that the validation set is distinct from both the training and test sets, ensuring the model does not "see" the same data more than once.
+Validation Set: The validation set is used during the tuning process of a model, primarily 
+to help adjust and fine-tune hyperparameters. This is also known as hyperparameter tuning. 
+Like the test set, the validation set is not used to train the model itself. Instead, it is
+used to evaluate the model's performance on unseen data during the training process, allowing 
+adjustments to be made to improve performance. It’s important that the validation set is distinct 
+from both the training and test sets, ensuring the model does not "see" the same data more than once.
 
-tuning process: adjusting certain parameters, known as hyperparameters, to optimize the model's performance on a given task. This process is crucial because the right configuration of hyperparameters can significantly improve the model's ability to generalize to new, unseen data.
+tuning process: adjusting certain parameters, known as hyperparameters, to optimize the model's 
+performance on a given task. This process is crucial because the right configuration of hyperparameters 
+can significantly improve the model's ability to generalize to new, unseen data.
 
-Hyperparameters: parameters that define the structure of the model or how it is trained, but they are not learned from the data itself. Instead, they are set manually before training begins. Example: Learning rate: Controls how quickly the model updates its parameters during training.
+Hyperparameters: parameters that define the structure of the model or how it is trained, but they 
+are not learned from the data itself. Instead, they are set manually before training begins. Example: 
+Learning rate: Controls how quickly the model updates its parameters during training.
 
-Development Set: The development set is used for preliminary assessment of the model’s performance. It helps developers make adjustments to the model before final evaluation. After the model is trained, the development set is often used to try out different configurations, refine algorithms, or adjust specific parts of the model's architecture. The development set can be used for broader tasks, including debugging, monitoring, and minor adjustments to the model before final testing.
+Development Set: The development set is used for preliminary assessment of the model’s performance. 
+It helps developers make adjustments to the model before final evaluation. After the model is trained, 
+the development set is often used to try out different configurations, refine algorithms, or adjust 
+specific parts of the model's architecture. The development set can be used for broader tasks, including 
+debugging, monitoring, and minor adjustments to the model before final testing.
 
-Reference Set: A reference set is a set of data that serves as a benchmark or standard for comparing the performance of different models or validating the outputs of a model. It is commonly used in competitions, shared tasks, or research to assess how well a model performs relative to others. By using a consistent reference set, researchers can compare models on an equal footing. In machine translation, a reference set might be a collection of human-translated sentences that models are compared against to measure translation quality (e.g., using metrics like BLEU).
+Reference Set: A reference set is a set of data that serves as a benchmark or standard for comparing 
+the performance of different models or validating the outputs of a model. It is commonly used in competitions, 
+shared tasks, or research to assess how well a model performs relative to others. By using a consistent
+reference set, researchers can compare models on an equal footing. In machine translation, a reference 
+set might be a collection of human-translated sentences that models are compared against to measure 
+translation quality (e.g., using metrics like BLEU).
