@@ -338,9 +338,168 @@ the development set is often used to try out different configurations, refine al
 specific parts of the model's architecture. The development set can be used for broader tasks, including 
 debugging, monitoring, and minor adjustments to the model before final testing.
 
-Reference Set: A reference set is a set of data that serves as a benchmark or standard for comparing 
-the performance of different models or validating the outputs of a model. It is commonly used in competitions, 
-shared tasks, or research to assess how well a model performs relative to others. By using a consistent
-reference set, researchers can compare models on an equal footing. In machine translation, a reference 
-set might be a collection of human-translated sentences that models are compared against to measure 
-translation quality (e.g., using metrics like BLEU).
+Reference: é qualquer conjunto de dados usado como base para comparação ou orientação. A "referência" pode não ter o mesmo nível de rigor que um Gold Standard, mas ainda é considerada confiável o suficiente para ser usada em avaliações. A qualidade de uma referência pode variar. Embora seja confiável, não precisa necessariamente ser a melhor ou mais precisa disponível, mas deve ser adequada para a tarefa ou contexto. Usada como orientação ou comparação, mas pode não ser a melhor disponível. Pode ser suficiente em contextos menos críticos onde a precisão absoluta não é essencial.
+
+Gold standard: um conjunto de dados ou uma coleção que foi meticulosamente organizada, verificada e validada com o mais alto nível de qualidade e precisão. Esse tipo de dataset é geralmente considerado o mais confiável e serve como referência ou benchmark para avaliação de modelos e algoritmos.
+
+K-fold cross-validation: usada para avaliar o desempenho de um modelo de maneira mais confiável. Ela divide o conjunto de dados em K partes (ou folds) e executa K experimentos, cada um usando uma parte diferente como conjunto de teste e as outras K-1 partes como conjunto de treinamento.
+
+O conjunto de dados é dividido aleatoriamente em K partes iguais, chamadas de folds. A aleatoriedade na divisão é importante para garantir que cada parte seja representativa da distribuição geral dos dados, evitando vieses que podem ocorrer se a divisão não for balanceada. Por exemplo, se K = 10, o conjunto de dados é dividido em 10 partes aproximadamente iguais.
+
+Em cada um dos K experimentos, um dos folds é usado como conjunto de teste, e os outros K-1 folds são combinados para formar o conjunto de treinamento.
+
+Assim, em cada rodada, você treina o modelo com uma parte diferente do conjunto de dados, garantindo que cada instância do conjunto de dados seja usada tanto para treinamento quanto para teste. Isso reduz o risco de sobreajuste ao avaliar o modelo, pois garante que ele tenha sido testado em diferentes subconjuntos dos dados.
+
+A divisão aleatória garante que o conjunto de dados seja distribuído de forma equilibrada entre os folds, minimizando a possibilidade de que um fold contenha um subconjunto de dados não representativo da distribuição total (por exemplo, todos os dados de uma mesma classe). Isso melhora a robustez da avaliação.
+
+No deep learning, essa técnica pode ser computacionalmente cara, pois exige o treinamento do modelo K vezes (um para cada fold). Como os modelos de deep learning geralmente são muito complexos e demorados para treinar, realizar o processo completo de K-fold pode ser inviável em alguns cenários.
+
+Data Augmentation: refere-se ao conjunto de técnicas usadas para aumentar o tamanho e a variedade de um conjunto de dados, gerando novas amostras a partir das existentes. Isso é especialmente útil quando há escassez de dados de treinamento e pode ajudar a melhorar a generalização de modelos de aprendizado de máquina.
+
+Substituição por Sinônimos: Consiste em substituir palavras de uma frase por seus sinônimos, mantendo o sentido original. Gera novas variações da mesma frase, aumentando a diversidade do conjunto de dados.
+Exemplo: "O gato está dormindo no sofá" → "O felino está descansando no sofá".
+
+Paráfrase: Reescrever uma sentença ou parágrafo com uma estrutura diferente, mas preservando o significado original. Introduz variações sem alterar o conteúdo semântico, ampliando a cobertura do conjunto de dados e melhorando a capacidade do modelo de lidar com diferentes maneiras de expressar o mesmo conceito.
+Exemplo: "Ele terminou o relatório" → "O relatório foi finalizado por ele".
+
+Rule-based Augmentation: Aplica regras linguísticas para transformar uma frase. Um exemplo comum é converter a voz ativa para a voz passiva ou vice-versa.Permite introduzir variações mais estruturadas, levando em consideração a gramática e sintaxe do idioma.
+"Ela escreveu a carta" (voz ativa) → "A carta foi escrita por ela" (voz passiva).
+
+Back Translation: Tradução de um texto para outro idioma e, em seguida, de volta para o idioma original. O texto resultante é uma variação da frase original. Gera variações naturais da frase ao passar por diferentes estruturas linguísticas. É uma forma eficaz de introduzir variação sem perder o significado.
+Exemplo: "O cachorro está latindo" → (tradução para inglês) "The dog is barking" → (tradução de volta para o português) "O cão está latindo".
+
+Random Swap: Realiza pequenas alterações nas sentenças, trocando aleatoriamente a posição de palavras.Cria variações na ordem das palavras, o que pode ajudar a melhorar a robustez do modelo. No entanto, essa técnica precisa ser usada com cuidado, pois a troca de palavras pode impactar a legibilidade e o significado.
+"Ele comeu um sanduíche" → "Ele um sanduíche comeu".
+
+Benefícios do Data Augmentation: Adiciona variações ao conjunto de dados, ajudando a evitar o sobreajuste (overfitting). Modelos treinados com dados aumentados tendem a ser mais robustos e capazes de generalizar melhor.
+
+Text Expansion: Consiste em enriquecer o conteúdo original com texto adicional relevante, como cláusulas explicativas ou frases descritivas. Isso pode ajudar a fornecer mais contexto e detalhamento ao texto, aumentando a quantidade de dados úteis para o modelo. A expansão de texto pode melhorar a capacidade do modelo de compreender textos mais longos e contextos mais ricos, ensinando-o a lidar com maior complexidade linguística.
+Exemplo: "Ela foi à praia" → "Ela, que estava muito cansada depois de uma semana de trabalho, foi à praia para relaxar."
+
+Noise Injection: Introduzir erros intencionais no texto, como erros de digitação, ortografia ou gramática, para simular imperfeições do mundo real. Isso ajuda a treinar modelos que possam lidar com ruído nos dados.
+Exemplo: "O cachorro está latindo" → "O cahorro estah latindo."
+
+Entity Substitution: Substitui entidades nomeadas (como nomes de pessoas, locais, organizações, etc.) por outras entidades do mesmo tipo. Isso aumenta a variabilidade dos dados e melhora a generalização de modelos que precisam reconhecer entidades.
+Exemplo: "John foi a Paris" → "Maria foi a Londres."
+Em vez de um modelo ser treinado para reconhecer um nome específico (por exemplo, "John"), ele aprende a lidar com qualquer entidade (outros nomes de pessoas) dentro de um contexto semelhante.
+
+Data cleaning (ou denoising): o processo de detecção e correção de erros e inconsistências nos conjuntos de dados, visando melhorar a qualidade e precisão dos dados usados para análise e modelagem. 
+
+Toxic Data: conteúdos textuais que contêm formas prejudiciais, ofensivas ou inapropriadas que podem ser gerados, analisados ou processados em modelos.
+
+Profanity (Palavrões): O uso de palavras de baixo calão, xingamentos ou linguagem ofensiva.
+Threats and Insults (Ameaças e Insultos): Frases que contêm ameaças diretas ou indiretas e insultos, onde o objetivo é intimidar ou ofender outra pessoa.
+Cyberbullying (Bullying Virtual): Comportamentos repetidos de intimidação, assédio ou abuso emocional direcionados a indivíduos online. Pode ocorrer em redes sociais, fóruns, ou qualquer outro espaço de interação digital.
+Discurso de Ódio (Hate Speech): Linguagem que promove preconceito, discriminação ou violência contra indivíduos ou grupos com base em características como raça, gênero, religião, orientação sexual, etc.
+Desinformação e Falsidade (Misinformation/Disinformation): Compartilhamento de informações falsas ou enganosas, que podem causar pânico, medo ou desorientação.
+Stereotyping/ generalizations: prática de fazer declarações ou formar crenças que atribuem uma característica, comportamento ou traço a todos os membros de um grupo com base em observações ou preconceitos limitados.
+
+Comparar strings — que podem ser palavras, frases, parágrafos ou até documentos inteiros — é uma tarefa fundamental. Essas comparações podem ser feitas de maneiras lexicais (baseadas em palavras) ou semânticas (baseadas no significado).
+Técnicas comuns: Distância de Levenshtein, Bag-of-Words, TF-IDF
+
+Comparação lexical envolve comparar as strings com base em suas palavras exatas (ou tokens), sem levar em conta o significado subjacente. Essa abordagem foca na igualdade exata das palavras e suas formas.
+Técnicas comuns: Word Embeddings, Cosine Similarity, Siamese Networks
+
+Exemplos em que comparar strings pode ser útil:
+
+Correção Ortográfica: Identificar e corrigir erros de ortografia em palavras, geralmente comparando as palavras escritas com uma lista de palavras corretas.
+Exemplo: "The brrown fox jumpped over the lazy dog." Aqui, as palavras "brrown" e "jumpped" são comparadas com a forma correta ("brown" e "jumped"), e a correção pode ser sugerida com base na similaridade das strings.
+
+Técnicas: Distância de Levenshtein, Algoritmos de Fuzzy Matching
+
+Data Cleaning: Identificar e mesclar registros duplicados que representam a mesma entidade, mesmo que as strings tenham pequenas variações.
+"John Fitzgerald Kennedy", "Jonh F. Kennedy", "Jonh Kennedy" => "John Kennedy".
+
+Técnicas: Distância de Jaccard, Fuzzy String Matching
+
+Detecção de Plágio: Detectar plágio ao comparar um texto com outro, avaliando se há semelhanças substanciais, mesmo que algumas palavras tenham sido trocadas.
+"The discovery of DNA structure was a revolutionary achievement in science." vs. "The revelation of the DNA structure was a revolutionary milestone in science."
+
+Técnicas: Cosine Similarity, N-grams, Shingling
+
+Code Similarity Detection: Comparar pedaços de código para identificar possíveis duplicações, reuso ou plágio de código em ambientes de desenvolvimento.
+Técnicas: Abstract Syntax Trees (AST), Fingerprinting, Tokenization
+
+Ao comparar strings ou outros dados, os termos distância e similaridade representam maneiras diferentes de medir a relação entre dois elementos. Compreender essa diferença é importante, pois alguns algoritmos utilizam métricas de similaridade, enquanto outros se baseiam em métricas de distância. Além disso, pode ser necessário normalizar esses valores para garantir que sejam comparáveis em diferentes contextos.
+
+Métricas de distância: quantifica o quão diferentes ou distantes dois itens são. Valores maiores indicam que os itens são mais diferentes, enquanto valores menores indicam que são mais semelhantes. Exemplos: Distância Euclidiana, Distancia de Levenshtein, Distancia Jaro-Winkler
+
+Propriedades: O valor da distância aumenta à medida que os itens se tornam mais diferentes. Quando dois itens são idênticos, a distância é zero. Algumas métricas de distância são limitadas (têm um valor máximo), enquanto outras são ilimitadas.
+
+Edit-based metrics: permitem quantificar o quão diferentes duas strings são, contando o número mínimo de operações necessárias para transformar uma string na outra. Essas operações geralmente incluem inserções, deleções e substituições de caracteres.
+
+1. Distancia de Levenshtein: mede o número mínimo de edições (inserções, deleções ou substituições) necessárias para transformar uma string em outra.
+
+Inserção: Adicionar um caractere na string para igualá-la à outra.
+Deleção: Remover um caractere da string para igualá-la à outra.
+Substituição: Trocar um caractere de uma string para torná-la igual ao caractere correspondente na outra string.
+
+Por exemplo, a distância de Levenshtein entre "gato" e "casa" é 3, pois requer três substituições para transformar uma string na outra.
+
+2. Longest Common Subsequence: mede a diferença entre duas strings, permitindo apenas inserções e deleções, mas não substituições. Ela identifica sequência mais longa de caracteres que aparece na mesma ordem em ambas as strings, mas não precisa ser contínua. 
+String A: "gato"
+String B: "caro"
+Os caracteres 'a' e 'o' aparecem nas mesmas posições relativas nas duas strings, ou seja, 'a' vem antes de 'o' em ambas.
+A subsequência "ao" aparece na mesma ordem em "gato" e "caro".
+Portanto, a subsequência comum mais longa (LCS) é "ao".
+
+Distancia LCS=(Tamanho da string A−Tamanho do LCS)+(Tamanho da string B−Tamanho do LCS)
+
+3. Hamming Distance: mede o número de posições em que os caracteres de duas strings de mesmo comprimento diferem. Ela só permite substituições.
+String A: "gato"
+String B: "gata"
+Distância de Hamming: 1 (a última posição é diferente: 'o' vs. 'a').
+
+4. Damerau-Levenshtein Distance: é uma extensão da distância de Levenshtein, permitindo as operações de inserção, deleção, substituição e também a transposição de dois caracteres adjacentes (troca de posição).
+String A: "gato"
+String B: "gaot"
+Distância de Damerau-Levenshtein: 1 (uma transposição entre 'o' e 't').
+
+5. Jaro Distance: foca em transposições de caracteres, calculando a similaridade entre duas strings com base no número de caracteres que são iguais, mas estão fora de ordem, permitindo apenas transposições. Quanto mais próximo o valor da métrica estiver de 1, mais semelhantes são as strings.
+Jaro Similarity = 1/3 * (m/|s1| + m/|s2| + m-t/m)
+m é o número de correspondências (caracteres iguais dentro da distância permitida).
+t é o número de transposições.
+∣s1∣ é o comprimento da primeira string.
+∣s2∣ é o comprimento da segunda string.
+Jaro Distance = 1 - Jaro Similarity
+
+String A: "gato"
+String B: "gaot"
+A métrica reconheceria que 't' e 'o' estão fora de ordem, calculando a transposição necessária para alinhar as strings.
+
+Métricas de similaridade: quantifica o quão semelhantes dois itens são. Valores maiores significam que os itens são mais semelhantes, e valores menores indicam que são mais diferentes. Exemplos: Similaridade do Cosseno, Similaridade de Jaccard, Produto interno para embeddings.
+
+Propriedades: Valores mais altos indicam maior similaridade. Para coincidências perfeitas, as métricas de similaridade geralmente retornam 1. As métricas de similaridade são geralmente limitadas entre [0, 1] ou [-1, 1], dependendo do método.
+
+Jaccard e Dice medem a similaridade entre duas strings. Ambas são métricas de similaridade baseadas em tokens que operam sobre conjuntos de elementos e não sobre "bags", ou seja, não consideram repetições de elementos.
+
+Jaccard Similarity: mede a proporção entre a interseção e a união de dois conjuntos. Em outras palavras, ela compara a quantidade de elementos em comum entre dois conjuntos em relação ao total de elementos nos dois conjuntos.
+
+Jaccard Similarity = |A ∩ B| / |A U B|
+A é o conjunto de tokens da primeira string.
+B é o conjunto de tokens da segunda string.
+
+String 1: "casa azul"
+String 2: "casa vermelha"
+Conjuntos de tokens (palavras):
+A={"casa","azul"}
+B={"casa","vermelha"}
+A ∩ B = {casa}
+A U B = {casa, azul, vermelha}
+JS = 1/3
+
+Dice Similarity: é uma métrica que mede o grau de similaridade entre dois conjuntos, enfatizando a interseção entre eles. 
+Dice Similarity = 2 x |A ∩ B| / |A|+|B|
+A e B são os conjuntos de tokens das duas strings.
+∣A∩B∣ é o número de elementos em comum (interseção).
+∣A∣ e ∣B∣ são os tamanhos dos conjuntos.
+
+A={"casa","azul"}
+B={"casa","vermelha"}
+Interseção: A∩B={"casa"}
+Tamanho de A: 2
+Tamanho de B: 2
+DS = 2x1/4 = 1/2
+
+Quando usamos métricas diferentes (especialmente métricas de distância), as escalas podem variar muito, tornando difícil compará-las diretamente. A normalização garante que os valores estejam em uma faixa consistente (geralmente entre 0 e 1 ou -1 e 1).
+Técnicas de normalização: Normalização Min-Max, Normalização Z-score, Escalonamento Logarítmico
