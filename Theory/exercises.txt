@@ -30,11 +30,17 @@ B 1
 I 2   X
 F 3 Y
 E 4
-
+X - 0 Y - 2
     B I O
   0 1 2 3
-B 1
-I 2   
-F 3 
-E 4
+B 1 0 1 2
+I 2 1 0 1    
+F 3 2 1 1    
+E 4 3 2 2
+mismatch -> minimo dos 3 + 1
+match -> repete o valor do meio (entre os 3)
+1 linha -> para igualar B com a string vazia, deleto B
+           para igualar BI com a string vazia, deleto BI
 
+1 coluna -> para transformar a string vazia em B, insiro B
+            para transformar a string vazia em BI, insiro BI
