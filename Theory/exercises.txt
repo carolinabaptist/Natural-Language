@@ -1,0 +1,40 @@
+1) Which of the following is an example of syntactic ambiguity? 
+
+a) "John kissed his own wife."
+A frase "John kissed his own wife." não apresenta ambiguidade.
+
+b) "The bank is on the river" 
+Lexical Ambiguity occurs bc bank has more than one meaning? 
+
+c) "I saw the man on the hill with a telescope" 
+É um exempo de ambiguidade sintática pois dependendo de como for estruturada pode ter 
+significado diferente.
+I saw the man on the hill with a telescope -> Vi um homem que estava numa colina e este homem
+estava com um telescópio
+
+I saw the man on the hill with a telescope -> Eu estava na colina quando vi um homem que levava
+consigo um telescópio
+
+I saw the man on the hill with a telescope -> Eu vi um homem que estava em uma colina através 
+do meu telescópio
+
+d) "Step" as in "Your dog’s name is Step"
+Não há ambiguidade nesta frase. "Step" está sendo usado como um nome próprio, e não como o 
+substantivo comum "degrau" ou "passo".
+
+2)Consider the Minimum Edit Distance (MED) between words “BIO” and “BIFE” and 
+the following table:
+    B I O
+  0 1 2 3
+B 1
+I 2   X
+F 3 Y
+E 4
+
+    B I O
+  0 1 2 3
+B 1
+I 2   
+F 3 
+E 4
+
