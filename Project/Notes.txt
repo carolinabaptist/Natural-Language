@@ -1,0 +1,20 @@
+Notas sobre o projeto
+
+Nossa tarefa especifica aqui é associar um genero a uma sinopse de filme, ou seja, estamos 
+desenvolvendo um sistema de classificação de gêneros de filmes. O objetivo é treinar um modelo
+que possa ler uma sinopse de filme e prever corretamente o(s) gênero(s) associado(s) ao filme.
+
+Nós temos um test set (test_no_labels.txt) sem output, conjunto de dados previamente preparado 
+que é usado para avaliar o desempenho do sistema e um training set (train.txt). O conjunto de 
+treinamento contém as sinopses de filmes com seus respectivos gêneros. O modelo aprende, a partir 
+dessas sinopses e gêneros, a identificar padrões que possam ser usados para classificar novos 
+filmes.
+
+Etapas para construir o sistema:
+1. Carregar os dados
+2. Pré-processamento de texto
+3. Dividir os dados em treino e validação
+4. Representação dos textos (Vetorização)
+5. Treinar o modelo de classificação
+6. Avaliar o desempenho
+7. Prever os gêneros do conjunto de teste
