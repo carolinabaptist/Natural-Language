@@ -503,3 +503,76 @@ DS = 2x1/4 = 1/2
 
 Quando usamos métricas diferentes (especialmente métricas de distância), as escalas podem variar muito, tornando difícil compará-las diretamente. A normalização garante que os valores estejam em uma faixa consistente (geralmente entre 0 e 1 ou -1 e 1).
 Técnicas de normalização: Normalização Min-Max, Normalização Z-score, Escalonamento Logarítmico
+
+Soundex: a phonetic algorithm for indexing names by their sound when pronounced in English. It's a useful technique when comparing strings based on pronunciation rather than their 
+exact spelling. Soundex works by converting names into a code that represents their 
+phonetic signature.
+
+1. Retain the first letter of the name;
+2. Drop all occurrences of a, e, i, o, u, y, h, w (unless they appear in the first
+position).
+3. Replace consonants by digits, as follows (after the first letter):
+(a) b, f, p, v -> 1
+(b) c, g, j, k, q, s, x, z -> 2
+(c) d, t -> 3
+(d) l -> 4
+(e) m, n -> 5
+(f) r -> 6
+4. Two adjacent letters with the same number are coded as a single number (ex:
+55 -> 5)
+5. Continue until you have one letter and three numbers. If you run out of numbers,
+add zeros until there are three numbers (ex: L2 -> L200); if you have too much
+numbers drop them after the third one (ex: L2345 -> L234)
+
+Metrics like Minimum Edit Distance (MED) and Jaccard Similarity are often used for comparing words, but they can also be applied to sentences for tasks such as detecting paraphrases or measuring lexical similarity between text.
+
+Minimum Edit Distance (also known as Levenshtein distance) measures how many single-character edits (insertions, deletions, or substitutions) are required to turn one string into another. While commonly applied at the word level, it can also be applied to whole sentences, where the focus would be on transforming one sentence into another.
+
+When comparing full sentences, MED becomes less intuitive. If word order changes drastically or words are substituted (e.g., "viewed by" vs. "visit"), the edit distance can be large, even though the sentences are paraphrases.
+
+Jaccard Similarity compares the words in two sentences as sets. It measures how many words they have in common versus how many words are unique across both sentences. Jaccard similarity ignores word order and focuses only on the presence of words, which might not capture the full meaning. Synonyms like "author" and "writer" would not be treated as equivalent, even though they are semantically similar.
+
+Both metrics—MED and Jaccard—can be applied at the sentence level but might not always capture the full meaning or intent of the text. They work at a lexical level (looking at characters or word overlap) rather than at a semantic level (understanding meaning).
+
+Improved Approaches for Paraphrase Detection:
+
+Word embeddings (e.g., Word2Vec, GloVe, or BERT): These embeddings capture word meanings and relationships, allowing for better similarity measurement between sentences.
+
+Cosine Similarity on word vectors: When using word embeddings, cosine similarity can measure how close the sentences are in meaning.
+
+Transformers and neural networks: Models like BERT can understand context and semantics, allowing for more accurate paraphrase detection.
+
+Automatic Evaluation: automatically evaluating systems, likely in the context of machine learning or some performance-based system.
+
+baseline: modelo simples, uma abordagem padrão ou um resultado pré-existente conhecido. Ele é utilizado para garantir que qualquer melhoria ou piora no desempenho de um sistema ou modelo mais avançado possa ser comparada com algo concreto. O baseline é a referência mínima aceitável, e um sistema novo deve, pelo menos, superá-lo ou igualá-lo.
+
+In the context of automatic evaluation, especially in machine learning and classification tasks, various metrics are used to assess the performance of a model.
+
+Precision: measures how many of the predicted positive instances are actually positive. It answers the question: Of all the items that were predicted as positive, how many were correct?
+P = TP/(TP + FP)
+
+Recall: measures how many of the actual positive instances were correctly predicted. It answers the question: Of all the actual positive cases, how many did we correctly identify?
+R = TP/(TP+FN)
+
+Accuracy: measures the overall correctness of the model by considering both positive and negative predictions. It answers the question: What proportion of total predictions were correct?
+A = TP + TN/TP + TN + FP + FN
+
+F-measure: harmonic mean of precision and recall. F1= 2*P*R/P+R
+
+Some types of human evaluation:
+
+Direct Assessment: Human evaluators rate the output on a fine-grained scale
+Example: 1-10, 1-100
+
+Rank-Based Evaluation: Multiple outputs are ranked in order of preference or quality. Enables evaluators to assess relative performance.
+
+Paired Comparison (a subcase of rank-based evaluation): Human evaluators are presented with two outputs and asked to choose the better one
+
+Pearson, Spearman, and Kendall are three statistical methods used to measure the strength and direction of association between two variables. They are used to find the correlation between human scores and metric scores. The higher the correlation with human scores, the better the metric
+
+Evaluation of evaluation Metrics
+Suppose we have two systems (e.g., System A and System B), and we want to evaluate how well each performs on a given task. Different evaluation metrics (like Precision, Recall, F1-Measure, etc.) can assign different scores to each system. The question here is: Do these metrics rank the systems in a way that aligns with human judgment?
+
+Sign alignment refers to checking whether the signs (positive or negative) of the rankings given by the metrics are consistent with the rankings given by humans.
+|sign(metric) = sign(human)|/|all system pairs|
+
