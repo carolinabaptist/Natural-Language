@@ -44,3 +44,65 @@ match -> repete o valor do meio (entre os 3)
 
 1 coluna -> para transformar a string vazia em B, insiro B
             para transformar a string vazia em BI, insiro BI
+
+3) Which strings match the RE /(should\s)+I?\s(stay|go)\snow/ (/ are used as 
+delimiters)
+() -> agrupamento
++ -> indica que a palavra pode aparecer uma ou mais vezes
+\s -> qualquer tipo de espaço
+(should\s)+ -> por ex: should 
+I?\s -> zero ou uma vez seguido de qq tipo de espaço 
+por ex: should I 
+(stay|go)\s -> stay ou go seguido de qq tipo de espaço
+por ex: should I stay 
+now
+por ex: should I stay now
+
+outros exemplos:
+should stay now
+should go now
+should I stay now
+should I go now
+should should stay now
+should should go now
+should should I go now
+
+4) Which of the following pairs of Regular Expressions are NOT equivalent?
+a) 1(01)* and (10)*1
+* -> zero ou mais
+1(01)* -> 1, 101, 10101 etc
+(10)*1 -> 1, 101, 10101 etc
+
+b) a* and (a|a+)
+a* -> _, a, aa, aaa etc
+(a|a+) -> aa, aaa, aaaa etc
+Não sao equivalentes
+
+5) Você está testando a capacidade de um sistema de reconhecimento de entidades nomeadas de identificar corretamente nomes de organizações (como empresas, instituições, grupos, etc.) em um texto, comparando os resultados obtidos pelo sistema com um conjunto de respostas corretas, conhecido como referência ou gabarito.
+TP = 4
+FP = 2
+FN = 1
+a) Precision? porcentagem das organizações identificadas pelo sistema estão corretas
+P = TP / TP + FP = 4/6 = 2/3
+b) Um falso negativo ocorre quando o sistema não reconhece uma entidade que, de acordo com o gabarito, deveria ser classificada como pertencente a uma determinada categoria (neste caso, uma organização).
+c) Sim, o sistema identificou duas entidades como organização que não eram. FP = 2
+d) Recall = TP / TP + FN = 4/5
+
+6) Data Hygene: Data hygiene se refere a manter os conjuntos de dados de treino e teste separados para a integridade do modelo.
+
+7) Explain two challenges associated with annotating toxic data?
+Toxic data -> profanity, insults, threats, misinformation, disinformation, stereotyping, generalizations, hate speech
+One of the major difficulties in annotating toxic data is the subjective nature of what constitutes "toxic" content. Different individuals and cultures may have varying thresholds for what is considered offensive, harmful, or inappropriate. What one annotator perceives as toxic might be seen as acceptable or neutral by another. This subjectivity can lead to inconsistencies in the annotations, making it harder to achieve consensus on what truly qualifies as toxic data.
+Annotating toxic data often involves exposing annotators to harmful, offensive, or distressing content, including hate speech, violence, or abusive language. Regular exposure to such material can have a significant emotional and psychological toll on annotators, potentially leading to issues like stress, burnout, or even desensitization to harmful content.
+
+8) How does noise injection help in data augmentation?
+Data augmentation:  process of artificially increasing the size and diversity of a dataset by creating modified versions of existing data. This technique is particularly useful in machine learning and deep learning to improve model performance, especially when working with limited data. 
+Noise injection introduces intentional errors like typos or grammatical 
+mistakes to simulate real-world data imperfections, enhancing the model's ability 
+to handle diverse and noisy inputs.
+
+9)What is the purpose of K-fold cross-validation?
+K-fold cross-validation aims to evaluate model performance by splitting 
+the dataset into K subsets, using each subset once as a test set while the rest serve 
+as training data, to obtain a more reliable average performance estimate
+
