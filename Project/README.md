@@ -14,4 +14,3 @@ The objective is to classify movie plots into one of several genres, such as Dra
 - **`train.txt`**: Labeled training data.
 - **`test_no_labels.txt`**: Unlabeled test data for final evaluation.
 - **`results.txt`**: Output of predicted genres for the test set.
-- **`21.pdf`**: Report on model design, results, and improvements.
